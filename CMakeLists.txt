@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.11)
-project(Panicake LANGUAGES CXX)
+project(Panicake LANGUAGES CXX ASM_MASM)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -24,13 +24,26 @@ set(EXPLOIT
     exp/CVE_2023_21768/exp.cpp
     exp/CVE_2023_21768/exp.hpp
     exp/CVE_2023_21768/def.hpp
+
+    exp/CVE_2026_40369/exp.cpp
+    exp/CVE_2026_40369/exp.hpp
+    exp/CVE_2026_40369/def.hpp
+)
+
+set(UTILS
+    utils/prefectch/global_var.hpp
+    utils/prefectch/prefectch.hpp
+    utils/prefectch/prefectch.cpp
 )
 
 # Specify MSVC UTF-8 encoding
 add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+add_library(prefetch_asm OBJECT utils/prefectch/prefetch.asm)
+
 link_libraries("Ws2_32.lib")
 link_libraries("ntdll.lib")
 
-add_executable(${PROJECT_NAME} ${PROJECT_INCLUDE} ${PROJECT_SOURCE} ${EXPLOIT})
+add_executable(${PROJECT_NAME} ${PROJECT_INCLUDE} ${PROJECT_SOURCE} ${EXPLOIT} ${UTILS})
 target_compile_definitions(${PROJECT_NAME} PRIVATE UNICODE _UNICODE)
+target_link_libraries(${PROJECT_NAME} PRIVATE $<TARGET_OBJECTS:prefetch_asm> ${CMAKE_SOURCE_DIR}/lib/ntdll.lib)
