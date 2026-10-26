@@ -1,6 +1,5 @@
 #include <iostream>
-#include <windows.h>
-#include "include/common/memtools.hpp"
+#include "exp/CVE_2023_21768/exp.hpp"
 using std::cout;
 
 unsigned int io2num(unsigned int ioctl_num) {
@@ -9,5 +8,8 @@ unsigned int io2num(unsigned int ioctl_num) {
 
 int main()
 {
+    SetConsoleOutputCP(CP_UTF8);   // 让控制台按 UTF-8 解释输出
+    SetConsoleCP(CP_UTF8);         // 输入也按 UTF-8（可选）
+    CVE_2023_21768::Exp();
     return 0;
 }
