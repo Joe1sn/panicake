@@ -13,6 +13,7 @@ A collection of Windows kernel exploits/PoCs, developed for my own research and 
 | CVE-2023-21768       | Version 22H2 (OS Build 22621.1)    | afd.sys     | https://github.com/Joe1sn/CVE_2023_21768 |
 | [TODO]CVE_2021_40449 | Version 1809(OS Build 17763.737)   | win32k.sys  | https://github.com/Joe1sn/CVE_2021_40449 |
 | CVE-2021-1732        | Version 1809(OS Build 17763.737)   | win32k.sys  | https://github.com/Joe1sn/CVE_2021_1732  |
+
 关于分支：
 
 About the branches:
