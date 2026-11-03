@@ -33,6 +33,12 @@ set(EXPLOIT
     exp/CVE_2021_1732/def.cpp
     exp/CVE_2021_1732/exp.hpp
     exp/CVE_2021_1732/exp.cpp
+
+    
+    exp/CVE_2021_40449/def.hpp
+    exp/CVE_2021_40449/def.cpp
+    exp/CVE_2021_40449/exp.hpp
+    exp/CVE_2021_40449/exp.cpp
 )
 
 set(UTILS
