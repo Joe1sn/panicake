@@ -28,6 +28,11 @@ set(EXPLOIT
     exp/CVE_2026_40369/exp.cpp
     exp/CVE_2026_40369/exp.hpp
     exp/CVE_2026_40369/def.hpp
+
+    exp/CVE_2021_1732/def.hpp
+    exp/CVE_2021_1732/def.cpp
+    exp/CVE_2021_1732/exp.hpp
+    exp/CVE_2021_1732/exp.cpp
 )
 
 set(UTILS

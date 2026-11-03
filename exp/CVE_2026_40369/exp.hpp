@@ -1,3 +1,9 @@
+/*
+ * @Date: 2026-11-03 14:54:36
+ * @LastEditors: joe1sn joe1sn23333@gmail.com
+ * @LastEditTime: 2026-11-03 15:04:43
+ * @FilePath: \panicake\exp\CVE_2026_40369\exp.hpp
+ */
 #pragma once
 #define WIN32_LEAN_AND_MEAN
 #include "def.hpp"
@@ -6,10 +12,10 @@
 #include <vector>
 #include <tlhelp32.h>
 
-inline constexpr ULONG_PTR ring3Addr = 0x94000000;
-
 namespace CVE_2026_40369
 {
+
+    inline constexpr ULONG_PTR ring3Addr = 0x94000000;
 
     enum seDebugResult {
         CANT_OPEN,
