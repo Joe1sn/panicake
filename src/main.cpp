@@ -7,18 +7,18 @@
 #include <iostream>
 #include <Windows.h>
 
- // #include "exp/CVE_2023_21768/exp.hpp"
+#include "exp/CVE_2023_21768/exp.hpp"
  // #include "exp/CVE_2026_40369/exp.hpp"
  // #include "exp/CVE_2021_1732/exp.hpp"
-#include "exp/CVE_2021_40449/exp.hpp"
+// #include "exp/CVE_2021_40449/exp.hpp"
 
 int main()
 {
     SetConsoleOutputCP(CP_UTF8);   // 让控制台按 UTF-8 解释输出
     SetConsoleCP(CP_UTF8);         // 输入也按 UTF-8（可选）
-    // CVE_2023_21768::Exp();
+    CVE_2023_21768::Exp();
     // CVE_2026_40369::Exp();
     // CVE_2021_1732::Exp();
-    CVE_2021_40449::Exp();
+    // CVE_2021_40449::Exp();
     return 0;
 }
