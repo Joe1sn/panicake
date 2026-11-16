@@ -1,7 +1,7 @@
 /*
  * @Date: 2026-11-09 08:47:06
  * @LastEditors: joe1sn joe1sn23333@gmail.com
- * @LastEditTime: 2026-11-16 14:12:54
+ * @LastEditTime: 2026-11-16 14:35:19
  * @FilePath: \panicake\exp\CVE_2023_28252\exp.cpp
  */
 #include "exp.hpp"
@@ -20,6 +20,13 @@
 #pragma comment(lib, "clfsw32.lib")
 namespace CVE_2023_28252
 {
+
+    void banner() {
+        std::cout << "┏━╸╻ ╻┏━╸   ┏━┓┏━┓┏━┓┏━┓   ┏━┓┏━┓┏━┓┏━╸┏━┓\n";
+        std::cout << "┃  ┃┏┛┣╸ ╺━╸┏━┛┃┃┃┏━┛╺━┫╺━╸┏━┛┣━┫┏━┛┗━┓┏━┛\n";
+        std::cout << "┗━╸┗┛ ┗━╸   ┗━╸┗━┛┗━╸┗━┛   ┗━╸┗━┛┗━╸┗━┛┗━╸\n";
+        std::cout << "     by Joe1sn(https://github.com/Joe1sn/)\n";
+    }
 
     void blfParser(std::wstring filepath) {
         std::fstream fs(filepath.c_str(), std::ios::in | std::ios::out | std::ios::binary);
@@ -77,6 +84,7 @@ namespace CVE_2023_28252
     }
 
     void Exp() {
+        banner();
 
         getVirtualFunction();
         getVirtualAddress();

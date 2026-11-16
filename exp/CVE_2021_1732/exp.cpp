@@ -7,6 +7,13 @@
 namespace offset = exploit::gadget::X_17763_737;
 namespace CVE_2021_1732
 {
+    void banner() {
+        std::cout << "┏━╸╻ ╻┏━╸   ┏━┓┏━┓┏━┓╺┓    ╺┓ ┏━┓┏━┓┏━┓\n";
+        std::cout << "┃  ┃┏┛┣╸ ╺━╸┏━┛┃┃┃┏━┛ ┃ ╺━╸ ┃   ┃╺━┫┏━┛\n";
+        std::cout << "┗━╸┗┛ ┗━╸   ┗━╸┗━┛┗━╸╺┻╸   ╺┻╸  ╹┗━┛┗━╸\n";
+        std::cout << "     by Joe1sn(https://github.com/Joe1sn/)\n";
+    }
+
     void arbitryRead0x10Size(ULONG_PTR pAddr, ULONG_PTR& valLow, ULONG_PTR& valHigh)
     {
         MENUBARINFO mbi = { 0 };
@@ -29,7 +36,7 @@ namespace CVE_2021_1732
     }
 
     bool Exp() {
-
+        banner();
         if (!initAPI())
             return false;
 

